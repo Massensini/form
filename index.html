@@ -11,6 +11,7 @@
   <title>Frontend Mentor | Intro component with sign up form</title>
 
   <link rel="stylesheet" href="./style/style.css">
+  <script defer src="./main.js"></script>
   </style>
 </head>
 
@@ -29,16 +30,32 @@
       <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
     </section>
     <form>
-      <input type="text" placeholder="First Name" autocomplete="none">
-      <input type="text" placeholder="Last Name" autocomplete="none">
-      <input type="email" placeholder="Email Address" autocomplete="none">
-      <input type="password" placeholder="Password" autocomplete="none">    
+      <label id="label">
+        <input type="text" id="inp-name" placeholder="First Name" autocomplete="none">
+        <span id="error-img"></span>
+        <span class="error-msg"></span>
+      </label>
+      <label id="label">
+        <input type="text" id="inp-last-name" placeholder="Last Name" autocomplete="none">
+        <span id="error-img"></span>
+        <span class="error-msg"></span>
+      </label>
+      <label id="label">
+        <input type="email" id="inp-email" placeholder="Email Address" autocomplete="none">
+        <span id="error-img"></span>
+        <span class="error-msg"></span>
+      </label>
+      <label id="label">
+        <input type="password" id="inp-password" placeholder="Password" autocomplete="none">
+        <span id="error-img"></span>
+        <span class="error-msg"></span>
+      </label>
 
       <input type="submit" value="Claim your free trial" class="submit-btn">
 
       <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
     </form>
-  </main>   
+  </main>
 </body>
 
 </html>
