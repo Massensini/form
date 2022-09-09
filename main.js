@@ -52,9 +52,22 @@ function form() {
 
     function validationEmail() {
         inputEmail.addEventListener('input', () => {
-            if (inputEmail.value === '') {
-                formValidation(inputEmail, '', 2, 'Email cannot be empty')
+            const emailValue = inputEmail.value
+
+            function validateEmail(email) {
+                var re = /\S+@\S+\.\S+/;
+                return re.test(email);
+              }
+                  
+            if(validateEmail(emailValue) = false) {
+                errorImg[2].classList.add('error-img')
+                input.classList.add('input-error')
+                errorMsg[2].innerHTML = 'Looks like this is not an email'
+                errorMsg[2].style.display = 'block'
             }
+
+         //   formValidation(inputEmail, '', 2, 'Email cannot be empty')
+
         })
     }
 
