@@ -57,17 +57,22 @@ function form() {
             function validateEmail(email) {
                 var re = /\S+@\S+\.\S+/;
                 return re.test(email);
-              }
-                  
-            if(validateEmail(emailValue) = false) {
-                errorImg[2].classList.add('error-img')
-                input.classList.add('input-error')
-                errorMsg[2].innerHTML = 'Looks like this is not an email'
-                errorMsg[2].style.display = 'block'
             }
 
-         //   formValidation(inputEmail, '', 2, 'Email cannot be empty')
-
+            if (emailValue == '') {
+                formValidation(inputEmail, '', 2, 'Email cannot be empty')
+            } else
+                if (validateEmail(emailValue) == false) {
+                    errorImg[2].classList.add('error-img')
+                    inputEmail.classList.add('input-error')
+                    errorMsg[2].innerHTML = 'Looks like this is not an email'
+                    errorMsg[2].style.display = 'block'
+                } else
+                    if (validateEmail(emailValue) == true) {
+                        errorImg[2].classList.remove('error-img')
+                        inputEmail.classList.remove('input-error')
+                        errorMsg[2].style.display = 'none'
+                    }
         })
     }
 
