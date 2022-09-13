@@ -78,7 +78,21 @@ function form() {
 
     function validationPassword() {
         inputPass.addEventListener('input', () => {
-            formValidation(inputPass, '', 3, 'Password cannot be empty')
+            if (inputPass.value === '') {
+                formValidation(inputPass, '', 3, 'Password cannot be empty')
+            } else
+                if (inputPass.value.length <= 5) {
+                    errorImg[3].classList.add('error-img')
+                    inputPass.classList.add('input-error')
+                    errorMsg[3].innerHTML = 'Your password must be at least 6 characters long'
+                    errorMsg[3].style.display = 'block'
+                }
+                else {
+                    errorImg[3].classList.remove('error-img')
+                    inputPass.classList.remove('input-error')
+                    errorMsg[3].style.display = 'none'
+                }
+
         })
     }
 
