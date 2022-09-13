@@ -118,13 +118,14 @@ function checkedInputs() {
     if (inputPass.value === '') {
         formValidation(inputPass, '', 3, 'Password cannot be empty')
     }
+
 }
 
 form()
 
 submitBtn.addEventListener('click', (e) => {
-    e.preventDefault()
     checkedInputs()
+    e.preventDefault()
 })
 
 
